@@ -17,13 +17,6 @@ body {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
-  .main-container {
-    justify-content: flex-start;
-    padding-top: 100px;
-  }
-}
-
 .header {
   text-align: center;
   position: relative;
@@ -413,5 +406,9 @@ body {
     font-size: 2rem;
     margin-top: 130px;
     letter-spacing: 2px;
+  }
+  .main-container {
+    justify-content: flex-start;
+    padding-top: 110px;
   }
 }
