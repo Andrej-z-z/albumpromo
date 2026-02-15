@@ -373,9 +373,10 @@ body {
   .tracklist {
     width: 100%;
     max-width: 425px;
-    max-height: 40vh;
+    max-height: calc(100vh - 400px);
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #333 #000;
+    padding-bottom: 20px;
   }
 }
