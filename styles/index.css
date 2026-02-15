@@ -408,4 +408,10 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #333 #000;
   }
+  .album-title {
+    font-weight: normal;
+    font-size: 2rem;
+    margin-top: 130px;
+    letter-spacing: 2px;
+  }
 }
