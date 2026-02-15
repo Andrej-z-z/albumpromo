@@ -20,7 +20,7 @@ body {
 @media screen and (max-width: 768px) {
   .main-container {
     justify-content: flex-start;
-    padding-top: 100px; /* Compensate for CD negative margin */
+    padding-top: 100px;
   }
 }
 
@@ -356,6 +356,20 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .cd {
+    width: 180px;
+    height: 180px;
+    margin-left: -90px;
+    margin-top: -90px;
+    border-radius: 120px;
+    animation: cd 12s linear infinite;
+    -webkit-animation: cd 16s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+  }
+
   .player {
     width: 65%;
     padding: 10px;
@@ -380,7 +394,7 @@ body {
   .tracklist {
     position: absolute;
     top: 350px;
-    bottom: 140px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
