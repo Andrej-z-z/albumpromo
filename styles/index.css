@@ -17,6 +17,13 @@ body {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .main-container {
+    justify-content: flex-start;
+    padding-top: 100px; /* Compensate for CD negative margin */
+  }
+}
+
 .header {
   text-align: center;
   position: relative;
@@ -371,12 +378,20 @@ body {
     width: 100%;
   }
   .tracklist {
+    position: absolute;
+    top: 350px;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     max-width: 425px;
-    max-height: calc(100vh - 400px);
+    height: auto;
+    max-height: none;
+    flex-grow: 0;
+    margin: 0;
+    padding-bottom: 10px;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #333 #000;
-    padding-bottom: 20px;
   }
 }
