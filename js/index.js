@@ -1,15 +1,14 @@
 const tracks = [
-  { title: 'CHECK', duration: '2:11', file: 'audio/CHECK.mp3' },
-  { title: 'plasticnaLu', duration: '1:46', file: 'audio/PlasticnaLu.mp3' },
-  { title: 'dramaic', duration: '1:55', file: 'audio/dramaic.mp3' },
-  { title: 'AnewEraIsHere', duration: '1:37', file: 'audio/AnewEraIsHere.mp3' },
-  { title: 'multipsample', duration: '1:53', file: 'audio/multipsample.mp3' },
-  { title: 'haine', duration: '1:42', file: 'audio/haine.mp3' },
-  { title: 'id3', duration: '1:17', file: 'audio/id3.mp3' },
-  { title: 'buducnost', duration: '2:22', file: 'audio/buducnost.mp3' },
-  { title: 'ti si moja', duration: '2:40', file: 'audio/ti_si_moja.mp3' },
-  { title: 'ZeZhop', duration: '3:20', file: 'audio/ZeZhop.mp3' },
-  { title: 'No back', duration: '1:23', file: 'audio/no_back.mp3' },
+  { title: 'drama', duration: '1:53', file: 'audio/drama.mp3' },
+  { title: 'new era', duration: '1:22', file: 'audio/new-era.mp3' },
+  { title: '90s', duration: '1:11', file: 'audio/90s.mp3' },
+  { title: 'the message', duration: '1:07', file: 'audio/the-message.mp3' },
+  { title: 'check', duration: '1:15', file: 'audio/check.mp3' },
+  { title: 'frankenstein', duration: '0:44', file: 'audio/frankenstein.mp3' },
+  { title: 'plastična', duration: '1:21', file: 'audio/plasticna.mp3' },
+  { title: 'rnb', duration: '0:56', file: 'audio/rnb.mp3' },
+  { title: 'find you', duration: '2:12', file: 'audio/find-you.mp3' },
+  { title: 'the fall', duration: '1:48', file: 'audio/the-fall.mp3' },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -89,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentRow = tracklistEl.children[index];
     currentRow.classList.add('active');
-    currentRow.querySelector('.play-btn').textContent = '||';
+    currentRow.querySelector('.play-btn').textContent = '⏸';
 
     playerEl.classList.add('visible');
     currentTrackTitleEl.textContent = track.title;
-    playPauseBtn.textContent = '||';
+    playPauseBtn.textContent = '⏸';
   }
 
   function togglePlay() {
@@ -109,11 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       audio.play();
       isPlaying = true;
-      playPauseBtn.textContent = '||';
+      playPauseBtn.textContent = '⏸';
       if (currentTrackIndex !== -1) {
         tracklistEl.children[currentTrackIndex].querySelector(
           '.play-btn',
-        ).textContent = '||';
+        ).textContent = '⏸';
       }
     }
   }
@@ -168,6 +167,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       currentTrackIndex = -1;
       playerEl.classList.remove('visible');
+    }
+  });
+
+  // Info Overlay Logic
+  const infoIcon = document.getElementById('info-icon');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+  const infoOverlay = document.getElementById('info-overlay');
+  const closeOverlay = document.getElementById('close-overlay');
+
+  function openOverlay() {
+    infoOverlay.classList.add('active');
+  }
+
+  function closeOverlayFunc() {
+    infoOverlay.classList.remove('active');
+  }
+
+  infoIcon.addEventListener('click', openOverlay);
+  hamburgerMenu.addEventListener('click', openOverlay);
+  closeOverlay.addEventListener('click', closeOverlayFunc);
+
+  // Close overlay on background click
+  infoOverlay.addEventListener('click', (e) => {
+    if (e.target === infoOverlay) {
+      closeOverlayFunc();
     }
   });
 });
