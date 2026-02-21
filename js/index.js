@@ -170,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Info Overlay Logic
   const infoIcon = document.getElementById('info-icon');
   const hamburgerMenu = document.getElementById('hamburger-menu');
   const infoOverlay = document.getElementById('info-overlay');

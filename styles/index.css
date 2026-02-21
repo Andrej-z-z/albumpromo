@@ -437,7 +437,6 @@ body {
   }
 }
 
-/* Info Overlay & Nav Icons */
 .nav-icons {
   position: fixed;
   top: 20px;
@@ -542,7 +541,7 @@ body {
 
 @media (max-width: 768px) {
   .info-icon,
-.hamburger-menu {
-  font-size: 1.2rem;
-}
+  .hamburger-menu {
+    font-size: 1.2rem;
+  }
 }
