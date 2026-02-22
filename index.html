@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Album</title>
-    <link rel="stylesheet" href="styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,10 +14,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png">
-    <link rel="manifest" href="imgs/favicon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="imgs/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="imgs/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="imgs/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <img class="background" src="imgs/bg.webp" alt="background" />
@@ -45,9 +59,15 @@
           >
         </div>
         <div class="player-controls">
-          <button id="prev-btn" class="player-btn">|◀</button>
-          <button id="play-pause-btn" class="player-btn">▶</button>
-          <button id="next-btn" class="player-btn">▶|</button>
+          <button id="prev-btn" class="player-btn">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button id="play-pause-btn" class="player-btn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button id="next-btn" class="player-btn">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
         </div>
         <div class="player-info-row">
           <div class="time-display">
