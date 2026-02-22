@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     row.innerHTML = `
             <div class="track-controls">
-                <button class="play-btn">▶</button>
+                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="track-info">
                 <span class="track-title">${track.title}</span>
@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTrackIndex !== -1) {
       const prevRow = tracklistEl.children[currentTrackIndex];
       prevRow.classList.remove('active');
-      prevRow.querySelector('.play-btn').textContent = '▶';
+      prevRow.querySelector('.play-btn').innerHTML =
+        '<i class="fa-solid fa-play"></i>';
     }
 
     currentTrackIndex = index;
@@ -88,31 +89,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentRow = tracklistEl.children[index];
     currentRow.classList.add('active');
-    currentRow.querySelector('.play-btn').textContent = '⏸';
+    currentRow.querySelector('.play-btn').innerHTML =
+      '<i class="fa-solid fa-pause"></i>';
 
     playerEl.classList.add('visible');
     currentTrackTitleEl.textContent = track.title;
-    playPauseBtn.textContent = '⏸';
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
   }
 
   function togglePlay() {
     if (isPlaying) {
       audio.pause();
       isPlaying = false;
-      playPauseBtn.textContent = '▶';
+      playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
       if (currentTrackIndex !== -1) {
         tracklistEl.children[currentTrackIndex].querySelector(
           '.play-btn',
-        ).textContent = '▶';
+        ).innerHTML = '<i class="fa-solid fa-play"></i>';
       }
     } else {
       audio.play();
       isPlaying = true;
-      playPauseBtn.textContent = '⏸';
+      playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
       if (currentTrackIndex !== -1) {
         tracklistEl.children[currentTrackIndex].querySelector(
           '.play-btn',
-        ).textContent = '⏸';
+        ).innerHTML = '<i class="fa-solid fa-pause"></i>';
       }
     }
   }
@@ -158,11 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
       playTrack(currentTrackIndex + 1);
     } else {
       isPlaying = false;
-      playPauseBtn.textContent = '▶';
+      playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
       if (currentTrackIndex !== -1) {
         tracklistEl.children[currentTrackIndex].querySelector(
           '.play-btn',
-        ).textContent = '▶';
+        ).innerHTML = '<i class="fa-solid fa-play"></i>';
         tracklistEl.children[currentTrackIndex].classList.remove('active');
       }
       currentTrackIndex = -1;
