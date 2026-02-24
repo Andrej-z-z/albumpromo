@@ -12,6 +12,15 @@ const tracks = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+  const bgImage = document.querySelector('.background');
+  if (bgImage.complete) {
+    bgImage.classList.add('loaded');
+  } else {
+    bgImage.addEventListener('load', () => {
+      bgImage.classList.add('loaded');
+    });
+  }
+
   const tracklistEl = document.getElementById('tracklist');
   const playerEl = document.getElementById('player');
   const currentTrackTitleEl = document.getElementById('current-track-title');
